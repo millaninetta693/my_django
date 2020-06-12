@@ -6,11 +6,7 @@ from taggit.managers import TaggableManager
 
 
 class Reference(models.Model):
-    STATUS_CHOICES = (
-        ('draft', 'Draft'),
-        ('published', 'Published'),
-    )
-
+    
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'reference_posts')
